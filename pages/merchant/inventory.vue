@@ -12,23 +12,23 @@
       <div class="section-inner">
         <h2>Inventory list</h2>
         <div class="cards">
-          <div class="card">
-            <div class="card-meta">
-              <i class="fa fa-credit-card" aria-hidden="true"></i>
-              <span>Total sales</span>
-            </div>
-            <div class="card-content">PHP {{ products.total_sales }}</div>
-          </div>
           <nuxt-link to="/merchant/transactions">
             <div class="card">
               <div class="card-meta">
-                <i class="fa fa-tag" aria-hidden="true"></i>
-                <span>Total quantity sold</span>
+                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                <span>Total sales</span>
               </div>
-              <div class="card-content">{{ products.total_quantity }} item/s</div>
+              <div class="card-content">PHP {{ products.total_sales }}</div>
               <div v-show="true" class="card-button"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
             </div>
           </nuxt-link>
+          <div class="card">
+            <div class="card-meta">
+              <i class="fa fa-tag" aria-hidden="true"></i>
+              <span>Total quantity sold</span>
+            </div>
+            <div class="card-content">{{ products.total_quantity }} item/s</div>
+          </div>
 
         </div>
 
