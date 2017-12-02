@@ -45,7 +45,7 @@
       if ('speechSynthesis' in window) {
         var msg = new SpeechSynthesisUtterance(`Here is your balance, do you wish to proceed?`)
         var voices = window.speechSynthesis.getVoices()
-        msg.voice = voices[49]
+        msg.voice = voices[0]
         window.speechSynthesis.speak(msg)
       }
 

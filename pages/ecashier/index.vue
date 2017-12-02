@@ -47,7 +47,7 @@
         if ('speechSynthesis' in window) {
           var msg = new SpeechSynthesisUtterance(`Hi! I'm Sam, your E-cashier. Display you qr code for scanning`)
           var voices = window.speechSynthesis.getVoices()
-          msg.voice = voices[49]
+          msg.voice = voices[0]
           window.speechSynthesis.speak(msg)
         }
       }

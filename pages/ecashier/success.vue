@@ -23,7 +23,7 @@
       if ('speechSynthesis' in window) {
         var msg = new SpeechSynthesisUtterance(`Thank you Juan! Transaction Successful!`)
         var voices = window.speechSynthesis.getVoices()
-        msg.voice = voices[49]
+        msg.voice = voices[0]
         window.speechSynthesis.speak(msg)
       }
     }
