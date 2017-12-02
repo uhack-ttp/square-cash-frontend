@@ -42,6 +42,13 @@
       }
     },
     mounted: function () {
+      if ('speechSynthesis' in window) {
+        var msg = new SpeechSynthesisUtterance(`Here is your balance, do you wish to proceed?`)
+        var voices = window.speechSynthesis.getVoices()
+        msg.voice = voices[49]
+        window.speechSynthesis.speak(msg)
+      }
+
       this.poll = setInterval(function () {
         this.confirmTransaction(this.$store.state.cashier.transactionId)
       }.bind(this), 2000)

@@ -18,7 +18,15 @@
 
 <script>
   export default {
-    layout: 'login'
+    layout: 'login',
+    mounted () {
+      if ('speechSynthesis' in window) {
+        var msg = new SpeechSynthesisUtterance(`Thank you Juan! Transaction Successful!`)
+        var voices = window.speechSynthesis.getVoices()
+        msg.voice = voices[49]
+        window.speechSynthesis.speak(msg)
+      }
+    }
   }
 </script>
 

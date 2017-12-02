@@ -95,7 +95,7 @@ app.set('port', port);
 
 // Import and Set Nuxt.js options
 var config = __webpack_require__(6);
-config.dev = !("production" === 'production');
+config.dev = !("development" === 'production');
 
 // Init Nuxt.js
 var nuxt = new __WEBPACK_IMPORTED_MODULE_1_nuxt__["Nuxt"](config);

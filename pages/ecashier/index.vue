@@ -6,7 +6,7 @@
         <button class="header-button">Merchant Portal</button>
       </nuxt-link>
     </header>
-    <section>
+    <section v-if="transactionStarted">
       <h2>Display you QR code to start scanning</h2>
       <qrcode-reader @decode="onDecode">
       </qrcode-reader>
@@ -14,6 +14,9 @@
         <div class="scan-area">
         </div>
       </div>
+    </section>
+    <section v-else>
+      <button class="start-button" @click.prevent="onStartTransaction">Start Transaction</button>
     </section>
   </section>
 </template>
@@ -24,6 +27,11 @@
   export default {
     layout: 'login',
     middleware: 'auth',
+    data () {
+      return {
+        transactionStarted: false
+      }
+    },
     methods: {
       ...mapActions({
         getTotalPrice: 'cashier/getTotalPrice'
@@ -33,12 +41,30 @@
           .then(() => {
             this.$router.push({ name: 'ecashier-balance' })
           })
+      },
+      onStartTransaction () {
+        this.transactionStarted = true
+        if ('speechSynthesis' in window) {
+          var msg = new SpeechSynthesisUtterance(`Hi! I'm Sam, your E-cashier. Display you qr code for scanning`)
+          var voices = window.speechSynthesis.getVoices()
+          msg.voice = voices[49]
+          window.speechSynthesis.speak(msg)
+        }
       }
     }
   }
 </script>
 
 <style scoped>
+  .start-button {
+    border-radius: 2px;
+    font-size: 16px;
+    line-height: .88;
+    color: #35343d;
+    border: 1px solid #f5a559;
+    padding: 12px 10px;
+  }
+
   .header {
     position: fixed;
     height: 56px;
