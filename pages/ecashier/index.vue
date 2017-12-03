@@ -63,6 +63,9 @@
     color: #35343d;
     border: 1px solid #f5a559;
     padding: 12px 10px;
+    color: #f7f9fc;
+    background-color: #f5a559;
+    cursor: pointer;
   }
 
   .header {
@@ -112,7 +115,7 @@
 
   .qrcode-reader {
     width: 600px;
-    height: auto;
+    height: 340px;
   }
 
   .scan-area {

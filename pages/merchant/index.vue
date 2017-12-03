@@ -1,7 +1,9 @@
 <template>
   <section class="container">
     <header class="header">
-      <img class="header-logo" src="/logo.png">
+      <nuxt-link to="/ecashier">
+        <img class="header-logo" src="/logo.png">
+      </nuxt-link>
       <nuxt-link to="/merchant">
         <button class="header-button">Merchant Portal</button>
       </nuxt-link>

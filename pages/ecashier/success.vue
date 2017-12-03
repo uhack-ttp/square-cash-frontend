@@ -10,7 +10,7 @@
     </header>
     <section>
       <i class="fa fa-check-circle" aria-hidden="true"></i>
-      <h3>Thank you Juan!</h3>
+      <h3>Thank you, Juan!</h3>
       <h3>Transaction Successful!</h3>
     </section>
   </section>
